@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../index.css" />
+        <title>Shaka Player</title>
+        <!-- SHAKA PLAYER -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.1.0/shaka-player.compiled.js"></script>
+    </head>
+    <body>
+        <video id="video"></video>
+        <div class="video-container_controls">
+            <button class="player-button" id="btn-en" onclick="switchAudio('en')">English Audio</button>
+            <button class="player-button" id="btn-de" onclick="switchAudio('de')">German Audio</button>
+            <button class="player-button" id="btn-fr" onclick="switchAudio('fr')">French Audio</button>
+            <button class="player-button" id="btn-es" onclick="switchAudio('es')">Spanish Audio</button>
+            <button class="player-button" id="btn-it" onclick="switchAudio('it')">Italian Audio</button>
+        </div>
+        <div class="video-subtitle_controls">
+            <button class="player-button" id="btn-sub-off" onclick="switchText('off')">Subtitle Off</button>
+            <button class="player-button" id="btn-sub-en" onclick="switchText('en')">English Subtitle</button>
+            <button class="player-button" id="btn-sub-fr" onclick="switchText('fr')">French Subtitle</button>
+            <button class="player-button" id="btn-sub-el" onclick="switchText('el')">Russian Subtitle</button>
+            <button class="player-button" id="btn-sub-pt-BR" onclick="switchText('pt-BR')">Portuguese (BR) Subtitle</button>
+        </div>
+        <script type="text/javascript"src="./shakaDemo.js"></script>
+        <script type="text/javascript"src="../index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <title>Video Player</title>
+</head>
+<body>
+    <div>
+        <h1>Video Player</h1>
+    </div>
+    <div class="container">
+        <div>
+            <h3>Test Stream Rail Title</h3>
+            <button id="dashLiveButton" onclick="redirectToDashPlayer()">Play Stream DASH <span class="live-text">LIVE</span></button>
+            <button id="shakaLiveButton" onclick="redirectToShakaPlayer()">Play Stream SHAKA <span class="live-text">LIVE</span></button>
+            <button id="hlsLiveButton" onclick="redirectToHlsLivePlayer()">Play Stream HLS <span class="live-text">LIVE</span></button>
+            <button id="hlsVodButton" onclick="redirectToHlsPlayer()">Play Stream HLS</button>
+            <button id="dashVodButton" onclick="redirectToDashVODPlayer()">Play Stream DASH</button>
+            <button id="shakaVodButton" onclick="redirectToShakaVODPlayer()">Play Stream SHAKA</button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h3>Test ABR/Audio Stream</h3>
+            <button id="dashABRButton" onclick="redirectToDashABRPlayer()">Play ABR Stream DASH <span class="abr-text">ABR</span></button>
+            <button id="shakaABRButton" onclick="redirectToShakaABRPlayer()">Play ABR Stream Shaka <span class="abr-text">ABR</span></button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h3>Shaka Demo Test</h3>
+            <button id="shakaDemoButton" onclick="redirectToShakaDemoPlayer()">Play Demo Stream SHAKA</button>
+            <button id="shakaDRMButton" onclick="redirectToShakaDRMPlayer()">Play DRM Stream SHAKA</button>
+        </div>
+    </div>
+    <script type="text/javascript"src="./index.js"></script>
+</body>
+</html>

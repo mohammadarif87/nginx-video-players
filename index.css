@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: aliceblue;
+}
+
+:root {
+    --button-width: 256px;
+    --player-button: 128px;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    padding-left: 5%;
+    padding-top: 20px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    padding: 32px;
+}
+
+button {
+    /* Ensure positioning context for absolute positioning */
+    position: relative;
+    width: var(--button-width);
+    height: calc(var(--button-width) / 2);
+}
+
+.player-button {
+    position: relative;
+    width: var(--player-button);
+    height: calc(var(--player-button) / 2);
+}
+
+.live-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    /* Ensure it's above the button text */
+    z-index: 1;
+}
+
+.abr-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    /* Ensure it's above the button text */
+    z-index: 1;
+}
+
+.focused {
+    /* Add yellow outline when focused */
+    outline: 3px solid yellow;
+}
+
+.video-container_controls {
+    position: absolute;
+    top: 3px;
+    /* bottom: 3px; */
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: right;
+    background: linear-gradient(180deg, #000000 30%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%);
+}
+
+.video-subtitle_controls {
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: right;
+    background: linear-gradient(0deg, #000000 30%, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 1) 100%);
+}
+
+#video {
+    width: 100%;
+}

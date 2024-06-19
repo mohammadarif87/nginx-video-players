@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../index.css" />
+        <title>Video Player</title>
+        <!-- DASH PLAYER -->
+        <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    </head>
+    <body>
+        <video id="video" controls></video>
+        <div class="video-container_controls">
+            <button class="player-button" id="btn-en" onclick="switchAudio('en')">English</button>
+            <button class="player-button" id="btn-de" onclick="switchAudio('de')">German</button>
+            <button class="player-button" id="btn-fr" onclick="switchAudio('fr')">French</button>
+        </div>
+        <script>
+            // DASH PLAYER
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(document.getElementById('video'), '../reference/ABR/ABR_manifest/abr_manifest.mpd', true);
+            
+            function switchAudio(lang) {
+            var tracks = player.getTracksFor('audio');
+            var selectedTrack = tracks.find(track => track.lang === lang);
+                if (selectedTrack) {
+                    player.setCurrentTrack(selectedTrack);
+                } else {
+                    console.log('Audio track not found for language:', lang);
+                }
+            }
+        </script>
+        <script type="text/javascript"src="../index.js"></script>
+    </body>
+</html>

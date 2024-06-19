@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../index.css" />
+        <title>Shaka Player</title>
+        <!-- SHAKA PLAYER -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.1.0/shaka-player.compiled.js"></script>
+    </head>
+    <body>
+        <video id="video" controls></video>
+        <div class="video-container_controls">
+            <button class="player-button" id="btn-en" onclick="switchAudio('en')">English</button>
+            <button class="player-button" id="btn-de" onclick="switchAudio('de')">German</button>
+            <button class="player-button" id="btn-fr" onclick="switchAudio('fr')">French</button>
+        </div>
+        <script>
+            //SHAKA PLAYER
+            var videoElement = document.getElementById('video');
+            var player = new shaka.Player(videoElement);
+            videoElement.autoplay = true;
+            player.load('../reference/ABR/ABR_manifest/abr_manifest.mpd');
+
+            function switchAudio(lang) {
+            var tracks = player.getVariantTracks();
+            var selectedTrack = tracks.find(track => track.language === lang);
+                if (selectedTrack) {
+                    player.selectAudioLanguage(lang);
+                    console.log('Switched to audio track language:', lang);
+                } else {
+                    console.log('Audio track not found for language:', lang);
+                }
+            }
+        </script>
+        <script type="text/javascript"src="../index.js"></script>
+    </body>
+</html>
