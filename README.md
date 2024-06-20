@@ -2,7 +2,9 @@
 A web app to test different open source players (DASH, Shaka and HLS) created using nginx. Supports Live streaming from OBS, Adaptive Bit Rate testing (ABR) and content with multiple audio/subtitle tracks
 
 You'll need to set up nginx. This can be via docker https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/ running the command `docker run -it --rm -d -p 8080:80 --name web webserver` once set up. Or you can install nginx locally by running the following brew commands:
+
 `brew tap denji/nginx`
+
 `brew install nginx-full --with-rtmp-module`
 
 Run `sudo nginx` to start nginx locally
